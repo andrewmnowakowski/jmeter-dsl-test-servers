@@ -1,2 +1,4 @@
 /server
+/apache-jmeter-*
 *.log
+*.tgz
