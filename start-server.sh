@@ -3,6 +3,7 @@
 DSERVER_RMI_LOCALPORT="2020"
 DSERVER_RMI_SSL_DISABLE="false"
 DSERVER_RMI_PORT="1099"
+IP_ADDRESS="192.168.56.1"
 
 echo "Starting server..."
 
@@ -14,10 +15,13 @@ then
     DSERVER_RMI_LOCALPORT=$2
 fi
 
-./server/bin/jmeter-server \
+cd "server/bin"
+
+./jmeter-server \
     -Dserver.rmi.localport=${DSERVER_RMI_LOCALPORT} \
     -Dserver.rmi.ssl.disable=${DSERVER_RMI_SSL_DISABLE} \
     -Dserver.rmi.port=${DSERVER_RMI_PORT} \
-    -Dserver_port=${DSERVER_RMI_PORT}
+    -Dserver_port=${DSERVER_RMI_PORT} \
+    -Djava.rmi.server.hostname=${IP_ADDRESS}
 
 exit 0
