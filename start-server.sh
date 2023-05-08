@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DSERVER_RMI_LOCALPORT="2020"
-DSERVER_RMI_SSL_DISABLE="true"
+DSERVER_RMI_SSL_DISABLE="false"
 DSERVER_RMI_PORT="1099"
 
 echo "Starting server..."

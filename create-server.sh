@@ -19,6 +19,11 @@ curl -L -s -o ${JMETER_TGZ_PATH} https://archive.apache.org/dist/jmeter/binaries
     && rm ${JMETER_TGZ_PATH}
 echo "Download complete."
 
+if [ -f "rmi_keystore.jks" ]
+then
+    cp "./rmi_keystore.jks" "./server/bin"
+fi
+
 echo "Server Created."
 
 exit 0
